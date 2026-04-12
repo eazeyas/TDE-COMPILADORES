@@ -27,7 +27,6 @@ DEFINICAO_TOKENS = [
     (r'\{', 'abre_chaves'),
     (r'\}', 'fecha_chaves'),
     (r'##[\s\S]*?##', None),
-    (r'\s+', None),
     (r'#.*', None)
 ]
 

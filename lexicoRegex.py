@@ -31,9 +31,12 @@ DEFINICAO_TOKENS = [
 ]
 
 def analise(pathArquivo):
-    with open(pathArquivo, 'r') as f:
+    try:
+        with open(pathArquivo, 'r') as f:
         linhas = f.readlines()
-    
+    except FilenotFoundError:
+        return [], "Erro: Arquivo não encontrado"
+     
     tabela = []
     erro = ""
     for numeroDaLinha, linha in enumerate(linhas, 1):

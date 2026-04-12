@@ -1,0 +1,7 @@
+# 
+int valor = 10;
+float pi = 3.14;
+str nome = "Sol";
+
+int resultado = (valor * 2) + 5;
+valor = valor % 2;

@@ -25,7 +25,7 @@ DEFINICAO_TOKENS = [
     (r'\(', 'abre_parenteses'),
     (r'\)', 'fecha_parenteses'),
     (r'\s+', None)
-    (r'#.*', None),
+    (r'\s+#.*', None),
 ]
 
 def analise(pathArquivo):

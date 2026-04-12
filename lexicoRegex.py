@@ -30,7 +30,7 @@ DEFINICAO_TOKENS = [
     (r'#.*', None)
 ]
 
-ef analise(pathArquivo):
+def analise(pathArquivo):
     with open(pathArquivo, 'r') as f:
         linhas = f.readlines()
     

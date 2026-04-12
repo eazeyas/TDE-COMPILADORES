@@ -30,13 +30,10 @@ DEFINICAO_TOKENS = [
     (r'#.*', None)
 ]
 
-def analise(pathArquivo):
-    try:
-        with open(pathArquivo, 'r') as f:
+ef analise(pathArquivo):
+    with open(pathArquivo, 'r') as f:
         linhas = f.readlines()
-    except FilenotFoundError:
-        return [], "Erro: Arquivo não encontrado"
-     
+    
     tabela = []
     erro = ""
     for numeroDaLinha, linha in enumerate(linhas, 1):
@@ -57,15 +54,11 @@ def analise(pathArquivo):
                 posicao += len(linha)
     return tabela, erro
 
-if len(sys.argv) > 1:
-    tabela, erros = analise(sys.argv[1])
+tabela, erros = analise(sys.argv[1])
 
-    print(f"{'Tipo':<20} {'Valor':<20} {'Linha':<5}")
-    print('-'*50)
-    for token in tabela:
-        print(f"{token['tipo']:<20} {token['valor']:<20} {token['linha']:<5}")
-
-    if erros:
-        print(f"\nERROS ENCONTRADOS:\n{erros}")
+print(f"{'Tipo':<24} {'Valor':<20} {'Linha':<5}")
+print('-'*60)
+for token in tabela:
+    print(f"{token['tipo']:<24} {token['valor']:<20} {token['linha']:<5}")
 
 print(f"\n{erros}")

@@ -47,7 +47,4 @@ print('-'*60)
 for token in tabela:
     print(f"{token['tipo']:<24} {token['valor']:<20} {token['linha']:<5}")
 
-print(f"\n{erros}")
-
-
-            
+print(f"\n{erros}")        

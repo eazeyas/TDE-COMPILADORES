@@ -5,7 +5,7 @@ import re
 DEFINICAO_TOKENS = [
     (r'\bint\b', 'tipo_variavel_int'),
     (r'\bstr\b', 'tipo_variavel_str'),
-    (r'\bfloat\b', 'tipo_variavel_flaot'),
+    (r'\bfloat\b', 'tipo_variavel_float'),
     (r'[a-zA-Z][a-zA-Z0-9]*', 'identificador'),
     (r'\d+', 'numero'),
     (r'\+', 'soma'),

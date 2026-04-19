@@ -1,9 +1,9 @@
-float i = 124.32;
+float i = 124,32;
 int j;
 
 para(j = 0; j < 20; j++) {
     i = i + j;
     imprima(i);
 
-    se(i == 135.32) quebre;
+    se(i == 135,32) quebre;
 }

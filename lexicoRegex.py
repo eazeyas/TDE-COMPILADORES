@@ -80,7 +80,7 @@ print(f"\n{erros}")
 
 @app.route('/')
 def hello():
-    return render_template("index.html", tokens=tabela, erros=erros)
+    return render_template("index.html", tokens=tabela, erros=erros, path_arquivo=sys.argv[1], codigo_fonte=open(sys.argv[1], 'r').read())
 
 if __name__ == '__main__':
     app.run(debug=True)

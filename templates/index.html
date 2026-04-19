@@ -6,10 +6,17 @@
 <body>
     <h1>TDE - COMPILADORES</h1>
 
-    <h2>Tabela de Tokens</h2>
+    <h2>Resultado do Analisador Léxico</h2>
+
+    <h3>Caminho do Arquivo analisado: {{ path_arquivo }}</h3>
+
+    <h3>Código Fonte:</h3>
+        <pre>{{ codigo_fonte }}</pre>
+
+    <h3>Tabela de Tokens</h3>
         <pre>{{ tokens }}</pre>
 
-    <h2>Erros:</h2>
+    <h3>Erros:</h3>
         <pre>{{ erros }}</pre>
 </body>
 </html>

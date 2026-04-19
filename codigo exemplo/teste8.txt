@@ -1,0 +1,4 @@
+proc soma(int a, int b) {
+    int resultado = a + b
+    imprima(resultado);
+}

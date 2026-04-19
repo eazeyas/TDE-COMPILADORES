@@ -1,0 +1,11 @@
+int contador = 0;
+
+enquanto(contador < 10) {
+    contador++;
+
+    se(contador % 2 == 0) {
+        continue;
+    }
+
+    imprima(contador);
+}

@@ -1,0 +1,10 @@
+int i = 5;
+
+enquanto(i >= 0) {
+    imprima(i);
+    i--;
+}
+
+str texto = "Teste sem fechar string;
+
+float valor = 10,5;

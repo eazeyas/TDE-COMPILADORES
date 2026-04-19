@@ -1,0 +1,14 @@
+int opcao = 2;
+
+escolha(opcao) {
+    caso 1:
+        imprima("Opcao 1");
+        quebre;
+
+    caso 2:
+        imprima("Opcao 2");
+        quebre;
+
+    padrao:
+        imprima("Opcao invalida");
+}

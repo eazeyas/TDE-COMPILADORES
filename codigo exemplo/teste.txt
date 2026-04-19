@@ -1,0 +1,16 @@
+##
+int idade = 21;
+float altura = 1.85;
+str status = "Ativo";
+
+##
+Bloco de teste para verificar 
+se o lexico nao se perde 
+entre tipos e valores
+##
+proc verificar_cadastro(int id) {
+    se (id > 0 && status == "Ativo") {
+        float bonus = 10.5 * id;
+        str msg = "Sucesso";
+    }
+}

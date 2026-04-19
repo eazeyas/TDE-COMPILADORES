@@ -1,0 +1,4 @@
+str saudacao = "Ola Mundo!";
+str vazio = "";
+str caminho = "C:/documentos/projeto";
+str caracteres_especiais = "123!@#$%&*";

@@ -1,11 +1,14 @@
+from flask import Flask, render_template
 import sys
 import re
 
+app = Flask(__name__)
+
 DEFINICAO_TOKENS = [
-    (r'\bint\b', 'tipo_variavel_int'),
-    (r'\bstr\b', 'tipo_variavel_str'),
-    (r'\bfloat\b', 'tipo_variavel_float'),
-    (r'[a-zA-Z][a-zA-Z0-9]*', 'identificador'),
+    (r'\bint\b', 'TIPO_VARIAVEL_INT'),
+    (r'\bstr\b', 'TIPO_VARIAVEL_STR'),
+    (r'\bfloat\b', 'TIPO_VARIAVEL_FLOAT'),
+    (r'[a-zA-Z][a-zA-Z0-9]*', 'IDENTIFICADOR'),
     (r'\d+', 'NUMERO'),
     (r'\+', 'SOMA'),
     (r'-', 'SUBTRACAO'),
@@ -31,10 +34,10 @@ DEFINICAO_TOKENS = [
     (r'quebre', 'BREAK'),
     (r'proc', 'PROCEDURE'),
     (r'\|\|', 'OR'),
-    (r'\(', 'abre_parenteses'),
-    (r'\)', 'fecha_parenteses'),
-    (r'\{', 'abre_chaves'),
-    (r'\}', 'fecha_chaves'),
+    (r'\(', 'ABRE_PARENTHESES'),
+    (r'\)', 'FECHA_PARENTHESES'),
+    (r'\{', 'ABRE_CHAVES'),
+    (r'\}', 'FECHA_CHAVES'),
     (r'##[\s\S]*?##', None),
     (r'\s+', None),
     (r'#.*', None)
@@ -72,3 +75,12 @@ for token in tabela:
     print(f"{token['tipo']:<24} {token['valor']:<20} {token['linha']:<5}")
 
 print(f"\n{erros}")
+
+
+@app.route('/')
+def hello():
+    return render_template("index.html", tokens=tabela, erros=erros)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+

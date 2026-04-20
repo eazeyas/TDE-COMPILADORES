@@ -2,21 +2,72 @@
 <html>
 <head>
     <title>TDE - COMPILADORES</title>
+
+    <style>
+        body { font-family: sans-serif; margin: 40px; line-height: 1.6; color: #000000; }
+        pre { color: #ffffff; background: #000000; padding: 10px; border: 1px solid #efefef; overflow-x: auto; }
+ 
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #000000;
+            color: white;
+            font-size: 14px;
+        }
+
+        .erro {
+            color: #ffffff;
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+    
 </head>
 <body>
     <h1>TDE - COMPILADORES</h1>
 
-    <h2>Resultado do Analisador Léxico</h2>
+    <h3>Arquivo: <code>{{ path_arquivo }}</code></h3>
 
-    <h3>Caminho do Arquivo analisado: {{ path_arquivo }}</h3>
+    <h2>Código Fonte:</h2>
+    <pre>{{ codigo_fonte }}</pre>
 
-    <h3>Código Fonte:</h3>
-        <pre>{{ codigo_fonte }}</pre>
+    <h2>Tabela de Tokens:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Linha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for token in tokens %}
+            <tr>
+                <td><strong>{{ token.tipo }}</strong></td>
+                <td><code>{{ token.valor }}</code></td>
+                <td>{{ token.linha }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-    <h3>Tabela de Tokens:</h3>
-        <pre>{{ tokens }}</pre>
-
-    <h3>Erros:</h3>
-        <pre>{{ erros }}</pre>
+    {% if erros %}
+    <h2>Erros:</h2>
+    <div class="erro">
+        <pre style="background: none; border: none; padding: 0;">{{ erros }}</pre>
+    </div>
+    {% endif %}
 </body>
 </html>

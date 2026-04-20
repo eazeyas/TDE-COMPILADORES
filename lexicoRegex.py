@@ -27,6 +27,7 @@ DEFINICAO_TOKENS = [
     (r'==', 'IGUAL'),
     (r'&&', 'AND'),
     (r'\|\|', 'OR'),
+    (r'!', 'NOT'),
     (r'<', 'MENOR'),
     (r'>', 'MAIOR'),
     (r'\*', 'MULTIPLICACAO'),

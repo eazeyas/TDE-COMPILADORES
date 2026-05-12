@@ -30,6 +30,9 @@ DEFINICAO_TOKENS = [
     (r'!', 'NOT'),
     (r'<', 'MENOR'),
     (r'>', 'MAIOR'),
+    (r'"[^"\n]*"', 'STRING'),
+    (r'-?\d+,\d+', 'NUMERO_DECIMAL'),
+    (r'-?\d+', 'NUMERO_INTEIRO'),
     (r'\*', 'MULTIPLICACAO'),
     (r'/', 'DIVISAO'),
     (r'\+', 'SOMA'),
@@ -42,9 +45,6 @@ DEFINICAO_TOKENS = [
     (r'\)', 'FECHA_PARENTESES'),
     (r'\{', 'ABRE_CHAVES'),
     (r'\}', 'FECHA_CHAVES'),
-    (r'"[^"\n]*"', 'STRING'),
-    (r'\d+,\d+', 'NUMERO_DECIMAL'),
-    (r'\d+', 'NUMERO_INTEIRO'),
     (r'[a-zA-Z][a-zA-Z0-9]*', 'IDENTIFICADOR'),
     (r'#.*', None),
     (r'\s+', None),
@@ -90,4 +90,3 @@ def hello():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
